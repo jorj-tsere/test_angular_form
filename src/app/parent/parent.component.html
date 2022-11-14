@@ -1,0 +1,20 @@
+<!-- <p>parent works!</p>
+<app-child></app-child> -->
+<form [formGroup]="generalForm">
+
+    <input type="text" formControlName="name">
+    <input type="text" formControlName="quantity">
+    <input type="text" formControlName="unitOfMeasure">
+    <input type="text" formControlName="amount">
+
+    <br><br><br><br><br>
+
+
+    <ng-container *ngFor="
+    let item of items.controls;
+    let i = index">
+        <app-child [parentFormGroup]="item"></app-child>
+    </ng-container>
+    
+
+</form>
